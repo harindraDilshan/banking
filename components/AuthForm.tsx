@@ -24,6 +24,7 @@ import { Loader2 } from 'lucide-react'
 import SignUp from '@/app/(auth)/sign-up/page'
 import SignIn from '@/app/(auth)/sign-in/page'
 import { useRouter } from 'next/navigation'
+import { signIn, signUp } from '@/lib/actions/user.actions'
 
 const formSchema = z.object({
     email: z.string().email(),
@@ -56,11 +57,11 @@ const AuthForm = ({type}: {type: string}) => {
     try {
         // sign up with Appwrite & create plain link token
         if(type === 'sign-up'){
-            // const newUser = await signUp(data)
-            // setUser(newUser)
+            const newUser = await signUp(data)
+            setUser(newUser)
         }
         if(type === 'sign-in'){
-            // const response = await SignIn({
+            // const response = await signIn({
             //     email: data.email,
             //     password: data.password,
             // })
