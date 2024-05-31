@@ -176,7 +176,8 @@ const AuthForm = ({type}: {type: string}) => {
 }
 
 export default AuthForm
-function getLoggedInInUser() {
+
+function getLoggedInUser() {
     throw new Error('Function not implemented.')
 }
 
